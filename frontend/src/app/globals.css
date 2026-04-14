@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  --color-boris-bg: #F9F9F8;
+  --color-boris-text: #1A1A1A;
+  --color-boris-primary: #2D6A4F;
+  --color-boris-surface: #EFEFED;
+  --color-boris-border: #E0DFDB;
+  --color-boris-overdue: #C0392B;
+  --color-boris-soon: #D97706;
+  --color-boris-completed: #6B7280;
+
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-boris: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-boris-bg);
+    color: var(--color-boris-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+
+  /* Enhanced Glassmorphism */
+  .glass {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-boris);
+  }
+
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--color-boris-border);
+    border-color: rgba(224, 223, 219, 0.5);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(45, 106, 79, 0.05), 0 8px 10px -6px rgba(45, 106, 79, 0.05);
+    border-color: rgba(45, 106, 79, 0.2);
+    transform: translateY(-4px);
+  }
+
+  /* Buttons */
+  .btn-primary {
+    background-color: var(--color-boris-primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1rem;
+    font-weight: 900;
+    box-shadow: 0 10px 15px -3px rgba(45, 106, 79, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-primary:hover {
+    filter: brightness(1.1);
+  }
+
+  .btn-primary:active {
+    transform: scale(0.95);
+  }
+
+  /* Inputs */
+  .input-boris {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--color-boris-border);
+    backdrop-filter: blur(4px);
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .input-boris:focus {
+    box-shadow: 0 0 0 4px rgba(45, 106, 79, 0.1);
+    border-color: var(--color-boris-primary);
+  }
+}
+
+/* Custom transitions */
+.transition-boris {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
