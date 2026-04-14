@@ -2,7 +2,7 @@
 
 A full-stack task management application designed to help users organize, prioritize, and track their work efficiently. Built with Django REST Framework for the backend and Next.js for a modern, responsive frontend.
 
-![Boris Dashboard](./dashboard.png)
+![Boris Dashboard](./screenshots/dashboard.png)
 
 ## 🚀 Features
 
